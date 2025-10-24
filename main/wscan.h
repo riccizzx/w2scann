@@ -1,8 +1,8 @@
-﻿// wscan.h: arquivo de inclusão para arquivos de inclusão padrão do sistema,
-// ou arquivos de inclusão específicos a um projeto.
+﻿
+//		ALL HEADERS INCLUDE FOR MAIN
 
 #pragma once
 
-#include <iostream>
-
-// TODO: Referencie os cabeçalhos adicionais de que seu programa precisa aqui.
+#include "stdio.h"
+#include "../src/ping_config.hpp"
+#include "../src/server/servercfg.hpp"

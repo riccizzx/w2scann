@@ -3,7 +3,16 @@
 #
 
 # Adicione a origem ao executável deste projeto.
-add_executable (main "wscan.cpp" "wscan.h")
+# Adicione a origem ao executável deste projeto.
+add_executable(
+    main
+    "wscan.cpp"
+    "wscan.h"
+    "../src/ping.cpp"
+    "../src/ping_config.hpp"
+    "../src/server/server.cpp"
+    "../src/server/servercfg.hpp"
+)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET main PROPERTY CXX_STANDARD 20)

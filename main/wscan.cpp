@@ -3,8 +3,8 @@
 
 #include "wscan.h"
 
-int main()
-{
-	std::cout << "Hello CMake." << std::endl;
+int main() {
+
 	return 0;
+
 }

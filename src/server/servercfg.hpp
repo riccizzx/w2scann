@@ -22,7 +22,6 @@
 #endif      // !SERVER_ERROR_HANDLER
 
 
-typedef int SOCKET s;
 
 namespace s {
 
