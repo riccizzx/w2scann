@@ -22,6 +22,8 @@
 #endif      // !SERVER_ERROR_HANDLER
 
 
+const int PORT = 9909;
+
 
 namespace s {
 
@@ -33,16 +35,23 @@ namespace s {
         
         void setupsock();
 
-
+        void con_infos(char* host, char* service);
 
     private:
 
         WSADATA ws;
         SOCKET server_sock;
         sockaddr_in server_addr;
+        sockaddr_in client_addr;
+        int serverlen = sizeof(server_addr);
         char* buffer[1024];
 
     };
+
+}
+
+void con_infos() {
+
 
 }
 

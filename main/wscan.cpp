@@ -1,11 +1,11 @@
-﻿// wscan.cpp: define o ponto de entrada para o aplicativo.
+﻿// wscan.cpp: entry point for application
 //
 
 #include "wscan.h"
 
 int main() {
 
-	printf("wscan\n");
+	s::server sv;
 
 	return 0;
 
