@@ -5,6 +5,8 @@
 
 int main() {
 
+	printf("wscan\n");
+
 	return 0;
 
 }
