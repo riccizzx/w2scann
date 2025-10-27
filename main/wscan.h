@@ -12,6 +12,7 @@
 
 
 #include "stdio.h"
+#include <iostream>
 #include "../src/features/ping_config.hpp"
 #include "../src/server/servercfg.hpp"
 

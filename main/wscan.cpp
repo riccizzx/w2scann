@@ -6,7 +6,13 @@
 int main() {
 
 	s::server sv;
-
+	try {
+		sv.init();
+		sv.setupsock();
+	}
+	catch (const std::exception& e) {
+		std::cerr << e.what();
+	}
 	return 0;
 
 }

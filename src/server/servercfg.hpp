@@ -37,21 +37,17 @@ namespace s {
 
         void con_infos(char* host, char* service);
 
+        void multi_cons();
+
     private:
 
         WSADATA ws;
-        SOCKET server_sock;
-        sockaddr_in server_addr;
-        sockaddr_in client_addr;
+        SOCKET server_sock, client_sock;
+        sockaddr_in server_addr, client_addr;
         int serverlen = sizeof(server_addr);
         char* buffer[1024];
 
     };
-
-}
-
-void con_infos() {
-
 
 }
 

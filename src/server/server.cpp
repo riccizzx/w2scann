@@ -1,5 +1,6 @@
 #include "servercfg.hpp"
 
+//	 get info from who has connected to the server
 void s::server::con_infos(char* host, char* service)
 {
 
@@ -34,6 +35,9 @@ bool s::server::init() {
 
 void s::server::setupsock(){
 
+	char host[NI_MAXHOST];	// get host log
+	char service[NI_MAXSERV];	// port from host
+
 
 	server_sock = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -45,9 +49,9 @@ void s::server::setupsock(){
 
 	server_addr.sin_family = AF_INET;
 	server_addr.sin_port = htons(PORT);
-	inet_pton(AF_INET, "0.0.0.0", &server_addr);
+	inet_pton(AF_INET, "0.0.0.0", &server_addr.sin_addr);
 
-	if (bind(server_sock, (sockaddr*)&server_addr, sizeof(server_addr))== -1) {
+	if (bind(server_sock, (sockaddr*)&server_addr, sizeof(server_addr))== SOCKET_ERROR) {
 		
 		handle_error("failed to bind the ip/port");
 
@@ -64,6 +68,30 @@ void s::server::setupsock(){
 
 	}
 
+	client_sock = accept(server_sock, NULL, NULL);
+	if (client_sock == INVALID_SOCKET) {
 
+		handle_error("can't connect to the server!\n");
+
+	}
+
+	else {
+		
+		memset(host, 0, NI_MAXHOST);
+		memset(service, 0, NI_MAXSERV);
+
+		try {
+
+			con_infos(host, service);
+			
+		}
+		catch (const std::exception& e) {
+			handle_error("failed in get client infos", e.what()"\n");
+		
+		}
+	
+	}
+
+	
 
 }
